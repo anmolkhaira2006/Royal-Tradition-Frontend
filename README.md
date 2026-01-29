@@ -3,6 +3,9 @@
 Royal Tradition — "Brew the Royal Tradition"
 
 A premium, minimalist "Coming Soon" landing page designed for a high-end Indian chai premix brand. This project translates the elegance of royal Indian heritage into a modern, responsive digital experience.
+🔗 Live Demo
+
+Experience the live interface here: https://royaltradition.netlify.app/
 
 ✨ Design Philosophy
 
