@@ -1,0 +1,360 @@
+:root {
+    --royal-gold: #c5a059;
+    --gold-glow: rgba(197, 160, 89, 0.3);
+    --deep-umber: #1a0f0a;
+    --silk-cream: #fdfcf0;
+    --muted-cream: rgba(253, 252, 240, 0.7);
+    --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --safe-padding: 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    background-color: var(--deep-umber);
+    color: var(--silk-cream);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+/* Subtle Steam Background Effect */
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, #2a1b14 0%, #1a0f0a 100%);
+    z-index: -1;
+}
+
+.steam-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Main Layout */
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--safe-padding);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Logo Section */
+.logo-wrapper {
+    margin-bottom: 2.5rem;
+    animation: fadeInDown 1.2s ease-out;
+}
+.logo-icon {
+    width: clamp(45px, 8vw, 70px);
+    height: auto;
+    margin-bottom: 0.5rem;
+    fill: var(--royal-gold);
+}
+
+.brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.85rem, 2vw, 1.2rem);
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    color: var(--royal-gold);
+    font-weight: 400;
+}
+/* Hero Contet */
+.content {
+    max-width: 800px;
+    width: 100%;
+    animation: fadeInUp 1.4s ease-out;
+    padding: 0 10px;
+}
+
+.launch-badge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border: 1px solid var(--royal-gold);
+    border-radius: 50px;
+    font-size: clamp(0.55rem, 1.5vw, 0.7rem);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: var(--royal-gold);
+}
+
+.tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+    background: linear-gradient(90deg, #fdfcf0 0%, #c5a059 50%, #fdfcf0 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 5s linear infinite;
+}
+.description {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-weight: 200;
+    color: var(--muted-cream);
+    margin-bottom: 2.5rem;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.05rem;
+}
+
+/* Interaction Group */
+.interaction-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Form Styling */
+.signup-form {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+input[type="email"] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 1.2rem 0;
+    color: var(--silk-cream);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: var(--transition);
+}
+
+input:focus {
+    border-bottom: 1px solid var(--royal-gold);
+}
+
+input::placeholder {
+    color: rgba(253, 252, 240, 0.3);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.15rem;
+}
+
+.submit-btn {
+    background: var(--royal-gold);
+    color: var(--deep-umber);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+    max-width: 450px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(253, 252, 240, 0.3),
+        transparent
+    );
+    transition: 0.6s;
+    z-index: -1;
+}
+
+.submit-btn:hover, .submit-btn:active {
+    background: var(--silk-cream);
+    color: var(--deep-umber);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.25rem;
+}
+
+.submit-btn:hover::before, .submit-btn:active::before {
+    left: 100%;
+}
+
+#notification {
+    position: fixed;
+    bottom: 60px; 
+    left: 50%;
+    transform: translateX(-50%) translateY(50px);
+    background: var(--royal-gold);
+    color: var(--deep-umber);
+    padding: 1rem 2rem;
+    width: fit-content;
+    min-width: 260px;
+    max-width: 85vw;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+    z-index: 5000;
+    opacity: 0;
+    visibility: hidden; 
+    pointer-events: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+#notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.footer {
+    margin-top: auto;
+    padding-top: 4rem;
+    width: 100%;
+    animation: fadeInUp 1.6s ease-out;
+}
+
+.social-icons {
+    display: flex;
+    gap: clamp(1.5rem, 5vw, 2.5rem);
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.social-link {
+    color: var(--muted-cream);
+    transition: var(--transition);
+    padding: 10px;
+}
+
+.social-link:hover {
+    color: var(--royal-gold);
+    transform: scale(1.15);
+}
+
+.copyright {
+    font-size: 0.6rem;
+    letter-spacing: 0.2rem;
+    color: rgba(253, 252, 240, 0.2);
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+}
+
+.corner-line {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.top-left { top: 40px; left: 40px; border-right: none; border-bottom: none; }
+.bottom-right { bottom: 40px; right: 40px; border-left: none; border-top: none; }
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+    :root { --safe-padding: 3rem; }
+    .corner-line { width: 60px; height: 60px; }
+    #notification { bottom: 80px; } 
+}
+
+@media (max-width: 600px) {
+    :root { --safe-padding: 1.5rem; }
+    .corner-line { display: none; }
+    
+    .container {
+        justify-content: flex-start;
+        padding-top: 3.5rem; 
+    }
+
+    .logo-wrapper { margin-bottom: 1.5rem; }
+    .content { margin-bottom: 1.5rem; }
+    
+    .tagline { margin-bottom: 0.8rem; }
+    .description { margin-bottom: 1.5rem; }
+
+    .submit-btn {
+        padding: 1rem 1.2rem;
+        font-size: 0.75rem; 
+        transition: var(--transition), background 0.2s, transform 0.2s;
+    }
+
+    .footer {
+        margin-top: 3rem; 
+        padding-top: 2rem;
+    }
+
+    #notification { 
+        bottom: 30px; 
+        padding: 0.8rem 1.5rem;
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .tagline { font-size: 1.6rem; }
+    .brand-name { letter-spacing: 0.3rem; }
+    .launch-badge { margin-bottom: 1rem; }
+}

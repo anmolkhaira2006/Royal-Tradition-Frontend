@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Tradition | Brew the Royal Tradition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    <div class="steam-container" id="steam"></div>
+
+    <div class="corner-line top-left"></div>
+    <div class="corner-line bottom-right"></div>
+
+    <main class="container">
+        <header class="logo-wrapper">
+            <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L14.5 9H21L15.5 13L17.5 20L12 16L6.5 20L8.5 13L3 9H9.5L12 2Z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+                <path d="M12 5L13.5 10H18L14.5 12.5L15.5 17L12 14.5L8.5 17L9.5 12.5L6 10H10.5L12 5Z" />
+            </svg>
+            <h1 class="brand-name">Royal Tradition</h1>
+        </header>
+
+        <section class="content">
+            <div class="launch-badge">Launching Winter 2026</div>
+            <h2 class="tagline">Brew the Royal Tradition</h2>
+            <p class="description">
+                Experience the heritage of Indian royalty in every sip. Our premium instant chai premix brings centuries of tradition to your modern lifestyle.
+            </p>
+
+            <div class="interaction-group">
+                <form class="signup-form" id="inviteForm">
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Email for an invitation" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Request Access</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="social-icons">
+                <a href="#" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            </div>
+            <p class="copyright">&copy; 2026 Royal Tradition</p>
+        </footer>
+    </main>
+
+    <div id="notification">Preparing your royal invitation...</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
